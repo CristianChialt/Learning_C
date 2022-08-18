@@ -6,6 +6,14 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+char checkConfirmation(string question) {
+    char confirmation;
+    cout << question << endl;
+    cout << "Y - yes | N - no" << endl;
+    cin >> confirmation;      
+    return confirmation;
+}
+
 void getUserName(string userName)
 {
     char confirmation;
@@ -13,10 +21,8 @@ void getUserName(string userName)
     {
         cout << "What's your name?" << endl;
         getline(cin, userName);
-        cout << "Your name is " << userName << "?" << endl;
-        cout << "Y - yes | N - no" << endl;
-        cin >> confirmation;        
-    } while (confirmation != 'Y');
+        confirmation = checkConfirmation("Your name is " + userName + "?");
+    } while (confirmation != 'Y' && confirmation != 'y');
     fflush(stdin);
 }
 
@@ -27,10 +33,8 @@ void getUserBirthYear(int &userBirthYear)
     {
         cout << "What's your birth year?" << endl;
         cin >> userBirthYear;
-        cout << "Your birth year is " << userBirthYear << "?" << endl;
-        cout << "Y - yes | N - no" << endl;
-        cin >> confirmation;     
-    } while (confirmation != 'Y');
+        confirmation = checkConfirmation("Your birth year is " + std::to_string(userBirthYear) + "?");
+    } while (confirmation != 'Y' && confirmation != 'y');
     fflush(stdin);
 }
 
