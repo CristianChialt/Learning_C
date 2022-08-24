@@ -47,7 +47,7 @@ int main()
         switch (choice)
         {
             case 0:
-                cout << "Game ending((";
+                cout << "Game ended((";
                 return 0;
             case 1:
                 game();
