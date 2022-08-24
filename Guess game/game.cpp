@@ -12,7 +12,7 @@ void game()
 {
     int random = rand() % 251;
     cout << "Let's start the game!" << endl;
-    cout << "The number you got is: " << random << endl;
+    //cout << "The number you got is: " << random << endl;
     
     int guessNum;
     do
